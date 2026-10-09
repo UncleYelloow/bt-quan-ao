@@ -1,0 +1,25 @@
+						<!-- <div class="beta-products-list">
+							<h4>Top Products</h4>
+							<div class="beta-products-details">
+								<p class="pull-left">438 styles found</p>
+								<div class="clearfix"></div>
+							</div>
+                            <div class="row">
+                                <% products.forEach(product => { %>
+									<%- include('product-card', { product }) %>
+								<% }) %>
+                            </div>
+						</div> .beta-products-list -->
+
+<section class="beta-products-list" aria-labelledby="top-products-title">
+    <h2 id="top-products-title">Top Products</h2>
+    <p class="beta-products-details"><%= products.length %> styles found</p>
+    <div class="product-list">
+        <% if (products.length === 0) { %>
+            <p class="empty-products">No top products found.</p>
+        <% } %>
+        <% products.forEach(product => { %>
+            <%- include('product-card', { product }) %>
+        <% }) %>
+    </div>
+</section>
